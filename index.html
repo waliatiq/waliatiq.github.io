@@ -5,7 +5,62 @@
   <title>Wali Atiq Website</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>/* SERVICES */
+  <style>/* PORTFOLIO */
+.portfolio {
+  padding:60px 20px;
+  text-align:center;
+}
+
+.portfolio h2 {
+  font-size:36px;
+  color:#00ffff;
+  margin-bottom:40px;
+}
+
+.portfolio-grid {
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  flex-wrap:wrap;
+}
+
+.portfolio-card {
+  width:280px;
+  background:#111827;
+  border-radius:15px;
+  overflow:hidden;
+  transition:0.3s;
+  box-shadow:0 0 15px rgba(0,255,255,0.2);
+}
+
+.portfolio-card:hover {
+  transform:translateY(-10px) scale(1.03);
+  box-shadow:0 0 25px #00ffff;
+}
+
+.portfolio-card img {
+  width:100%;
+  height:180px;
+  object-fit:cover;
+}
+
+.portfolio-card h3 {
+  color:#00ffff;
+  margin:15px 0 5px;
+}
+
+.portfolio-card p {
+  color:#cbd5e1;
+  font-size:14px;
+  padding:0 15px 20px;
+}
+
+/* light mode */
+.light-mode .portfolio-card {
+  background:#f3f4f6;
+  color:black;
+}
+/* SERVICES */
 .services {
   padding:60px 20px;
   text-align:center;
@@ -47,6 +102,33 @@
   color:#cbd5e1;
   font-size:15px;
 }
+</section>
+<!-- PORTFOLIO -->
+<section class="portfolio">
+  <h2>My Portfolio</h2>
+
+  <div class="portfolio-grid">
+
+    <div class="portfolio-card">
+      <img src="https://picsum.photos/400/300?random=1">
+      <h3>Business Website</h3>
+      <p>Modern responsive business website design.</p>
+    </div>
+
+    <div class="portfolio-card">
+      <img src="https://picsum.photos/400/300?random=2">
+      <h3>Landing Page</h3>
+      <p>High converting landing page for marketing.</p>
+    </div>
+
+    <div class="portfolio-card">
+      <img src="https://picsum.photos/400/300?random=3">
+      <h3>Portfolio Website</h3>
+      <p>Personal portfolio with clean UI design.</p>
+    </div>
+
+  </div>
+</section>
 
 /* light mode support */
 .light-mode .service-card {
