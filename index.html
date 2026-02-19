@@ -4,7 +4,68 @@
   <title>Wali Atiq Website</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
+  <style>/* CONTACT */
+.contact {
+  padding:60px 20px;
+  text-align:center;
+  background:#111827;
+}
+
+.contact h2 {
+  font-size:36px;
+  color:#00ffff;
+  margin-bottom:40px;
+}
+
+.contact form {
+  max-width:500px;
+  margin:0 auto;
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+
+.contact input,
+.contact textarea {
+  padding:12px;
+  border-radius:6px;
+  border:none;
+  font-size:16px;
+  resize:none;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+  outline:none;
+  box-shadow:0 0 8px #38bdf8;
+}
+
+.contact button {
+  padding:12px;
+  background:#38bdf8;
+  border:none;
+  border-radius:8px;
+  font-weight:bold;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.contact button:hover {
+  background:#0ea5e9;
+  transform:scale(1.05);
+}
+
+/* light mode support */
+.light-mode .contact {
+  background:#f3f4f6;
+  color:black;
+}
+.light-mode .contact input,
+.light-mode .contact textarea {
+  background:white;
+  color:black;
+}
+
     body {
       margin:0;
       font-family:Arial;
@@ -154,6 +215,16 @@
       height:180px;
       object-fit:cover;
     }
+<!-- CONTACT -->
+<section class="contact">
+  <h2>Contact Me</h2>
+  <form>
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea rows="5" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
 
     /* CLOCK */
     .clock-box {
