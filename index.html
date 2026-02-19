@@ -4,263 +4,6 @@
   <title>Wali Atiq Website</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>.hero {
-  background: linear-gradient(135deg, #0f172a, #020617);
-  animation: gradientBG 8s ease infinite;
-}
-
-@keyframes gradientBG {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-.hero {
-  background-size: 200% 200%;
-}
-/* HERO ANIMATION */
-.hero-content {
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeSlide 1s forwards;
-  animation-delay: 0.5s;
-}
-
-.hero-btn {
-  opacity: 0;
-  transform: scale(0.8);
-  animation: buttonPop 0.8s forwards;
-  animation-delay: 1.5s;<button class="hero-btn" onclick="window.location='#contact'">Hire Me</button>
-<section id="contact" style="height:80vh; display:flex; justify-content:center; align-items:center; text-align:center;">
-  <h2>Contact Me</h2>
-  <p>Email: waliatiq@example.com</p>
-</section>
-
-}
-
-@keyframes fadeSlide {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes buttonPop {
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-    body {
-      margin:0;
-      font-family:Arial;
-      background-color:#0f172a;
-      color:white;
-      transition:0.3s;
-    }
-
-    .navbar {
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      background-color:#111827;
-      padding:15px 40px;
-    }
-
-    .logo {
-      color:#00ffff;
-      font-size:24px;
-      font-weight:bold;
-    }
-
-    .menu {
-      list-style:none;
-      display:flex;
-      gap:25px;
-      margin:0;
-      padding:0;
-    }
-
-    .menu li {
-      cursor:pointer;
-      font-size:18px;
-    }
-
-    .menu li:hover {
-      color:#00ffff;
-    }
-
-    #modeToggle {
-      padding:8px 18px;
-      font-size:16px;
-      background:#00ffff;
-      border:none;
-      border-radius:6px;
-      cursor:pointer;
-      color:#111827;
-      font-weight:bold;
-    }
-
-    /* HERO */
-    .hero {
-      height:80vh;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      text-align:center;
-      background:linear-gradient(135deg,#0f172a,#020617);
-      padding:20px;
-    }
-
-    .hero-content h1 {
-      font-size:48px;
-      color:#00ffff;
-      margin-bottom:15px;
-    }
-
-    .hero-content p {
-      font-size:20px;
-      color:#cbd5e1;
-      margin-bottom:25px;
-    }
-
-    .hero-btn {
-      padding:12px 30px;
-      font-size:18px;
-      background:#00ffff;
-      color:#111827;
-      border:none;
-      border-radius:8px;
-      cursor:pointer;
-      font-weight:bold;
-    }
-
-    .clock-box {
-      display:inline-block;
-      padding:25px 50px;
-      background-color:#111827;
-      border-radius:20px;
-      box-shadow:0 0 25px #00ffff;
-      margin:40px auto;
-      text-align:center;
-    }
-
-    #time {
-      font-size:48px;
-      color:#00ffff;
-      font-weight:bold;
-    }
-
-    #date {
-      font-size:22px;
-      margin-top:10px;
-      color:#cbd5e1;
-    }
-
-    .light-mode {
-      background:white;
-      color:black;
-    }
-
-    .light-mode .navbar {
-      background:#e5e7eb;
-    }
-
-    .light-mode .clock-box {
-      background:#f3f4f6;
-      box-shadow:0 0 15px #999;
-    }
-
-    @media screen and (max-width:768px) {
-      .hero-content h1 { font-size:32px; }
-    }
-  </style>
-</head>
-
-<body>
-
-  <!-- NAVBAR -->
-  <div class="navbar">
-    <div class="logo">Wali Atiq</div>
-
-    <ul class="menu">
-      <li>Home</li>
-      <li>About</li>
-      <li>Services</li>
-      <li>Contact</li>
-    </ul>
-
-    <button id="modeToggle">🌙 Mode</button>
-  </div>
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Hi, I'm Wali Atiq</h1>
-      <p>I create modern and responsive websites</p>
-      <button class="hero-btn">Hire Me</button>
-    </div>
-  </section>
-
-  <!-- CLOCK -->
-  <div class="clock-box">
-    <div id="time"></div>
-    <div id="date"></div>
-  </div>
-
-<script>// Smooth scroll for all anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute('href')).scrollIntoView({
-      behavior: 'smooth'
-    });
-  });
-});
-
-function updateClock() {
-  var now = new Date();
-  var hours = now.getHours();
-  var minutes = now.getMinutes();
-  var seconds = now.getSeconds();
-  var ampm = (hours >= 12) ? "PM" : "AM";
-
-  hours = hours % 12;
-  if (hours == 0) hours = 12;
-
-  if (hours < 10) hours = "0" + hours;
-  if (minutes < 10) minutes = "0" + minutes;
-  if (seconds < 10) seconds = "0" + seconds;
-
-  document.getElementById("time").innerHTML =
-    hours + ":" + minutes + ":" + seconds + " " + ampm;
-
-  document.getElementById("date").innerHTML =
-    now.toLocaleDateString(undefined, {
-      weekday:'long',
-      year:'numeric',
-      month:'long',
-      day:'numeric'
-    });
-}
-
-setInterval(updateClock, 1000);
-updateClock();
-
-document.getElementById("modeToggle").onclick = function () {
-  document.body.classList.toggle("light-mode");
-};
-</script>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Wali Atiq Website</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <style>
     body {
       margin:0;
@@ -270,6 +13,7 @@ document.getElementById("modeToggle").onclick = function () {
       transition:0.3s;
     }
 
+    /* NAVBAR */
     .navbar {
       display:flex;
       justify-content:space-between;
@@ -321,6 +65,12 @@ document.getElementById("modeToggle").onclick = function () {
       text-align:center;
       background:linear-gradient(135deg,#0f172a,#020617);
       padding:20px;
+      animation:fadeIn 1.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {opacity:0; transform:translateY(40px);}
+      to {opacity:1; transform:translateY(0);}
     }
 
     .hero-content h1 {
@@ -336,16 +86,22 @@ document.getElementById("modeToggle").onclick = function () {
     }
 
     .hero-btn {
+      display:inline-block;
       padding:12px 30px;
-      font-size:18px;
-      background:#00ffff;
-      color:#111827;
-      border:none;
+      background:#38bdf8;
+      color:black;
+      text-decoration:none;
       border-radius:8px;
-      cursor:pointer;
       font-weight:bold;
+      transition:0.3s;
     }
 
+    .hero-btn:hover {
+      background:#0ea5e9;
+      transform:scale(1.08);
+    }
+
+    /* CLOCK */
     .clock-box {
       display:inline-block;
       padding:25px 50px;
@@ -368,6 +124,7 @@ document.getElementById("modeToggle").onclick = function () {
       color:#cbd5e1;
     }
 
+    /* LIGHT MODE */
     .light-mode {
       background:white;
       color:black;
@@ -382,41 +139,47 @@ document.getElementById("modeToggle").onclick = function () {
       box-shadow:0 0 15px #999;
     }
 
-    @media screen and (max-width:768px) {
+    /* MOBILE */
+    @media (max-width:768px) {
       .hero-content h1 { font-size:32px; }
+      .menu { flex-direction:column; gap:12px; }
+      .navbar { flex-direction:column; align-items:flex-start; }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
-  <div class="navbar">
-    <div class="logo">Wali Atiq</div>
+<!-- NAVBAR -->
+<div class="navbar">
+  <div class="logo">Wali Atiq</div>
 
-    <ul class="menu">
-      <li>Home</li>
-      <li>About</li>
-      <li>Services</li>
-      <li>Contact</li>
-    </ul>
+  <ul class="menu">
+    <li>Home</li>
+    <li>About</li>
+    <li>Services</li>
+    <li>Contact</li>
+  </ul>
 
-    <button id="modeToggle">🌙 Mode</button>
-  </div>
+  <button id="modeToggle">🌙 Mode</button>
+</div>
+
 <!-- HERO -->
 <section class="hero">
   <div class="hero-content">
     <h1>Hi, I'm Wali Atiq</h1>
     <p>I create modern and responsive websites</p>
-    <button class="hero-btn">Hire Me</button>
+    <a href="#" class="hero-btn">Hire Me</a>
   </div>
 </section>
 
-  <!-- CLOCK -->
+<!-- CLOCK -->
+<div style="text-align:center;">
   <div class="clock-box">
     <div id="time"></div>
     <div id="date"></div>
   </div>
+</div>
 
 <script>
 function updateClock() {
@@ -424,10 +187,10 @@ function updateClock() {
   var hours = now.getHours();
   var minutes = now.getMinutes();
   var seconds = now.getSeconds();
-  var ampm = (hours >= 12) ? "PM" : "AM";
 
+  var ampm = hours >= 12 ? "PM" : "AM";
   hours = hours % 12;
-  if (hours == 0) hours = 12;
+  hours = hours ? hours : 12;
 
   if (hours < 10) hours = "0" + hours;
   if (minutes < 10) minutes = "0" + minutes;
@@ -438,10 +201,10 @@ function updateClock() {
 
   document.getElementById("date").innerHTML =
     now.toLocaleDateString(undefined, {
-      weekday:'long',
-      year:'numeric',
-      month:'long',
-      day:'numeric'
+      weekday:"long",
+      year:"numeric",
+      month:"long",
+      day:"numeric"
     });
 }
 
@@ -455,154 +218,3 @@ document.getElementById("modeToggle").onclick = function () {
 
 </body>
 </html>
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Wali Atiq Website</title>
-  <style>/* HERO ANIMATION */
-.hero {
-  height: 80vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background: linear-gradient(135deg, #0f172a, #020617);
-  background-size: 200% 200%;
-  animation: gradientBG 8s ease infinite;
-  padding: 20px;
-  color: white;
-}
-
-@keyframes gradientBG {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-.hero-content {
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeSlide 1s forwards;
-  animation-delay: 0.5s;
-}
-
-.hero-content h1 {
-  font-size: 48px;
-  margin-bottom: 15px;
-  color: #00ffff;
-}
-
-.hero-content p {
-  font-size: 20px;
-  margin-bottom: 25px;
-  color: #cbd5e1;
-}
-
-.hero-btn {
-  padding: 12px 30px;
-  font-size: 18px;
-  background: #00ffff;
-  color: #111827;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
-  opacity: 0;
-  transform: scale(0.8);
-  animation: buttonPop 0.8s forwards;
-  animation-delay: 1.5s;
-}
-
-@keyframes fadeSlide {
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes buttonPop {
-  to { opacity: 1; transform: scale(1); }
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-  .hero-content h1 { font-size: 32px; }
-}
-
-    body {
-      margin:0;
-      font-family:Arial;
-      background-color:#0f172a;
-      color:white;
-      transition:0.3s;
-    }
-    .navbar { display:flex; justify-content:space-between; align-items:center; background-color:#111827; padding:15px 40px; }
-    .logo { color:#00ffff; font-size:24px; font-weight:bold; }
-    .menu { list-style:none; display:flex; gap:25px; margin:0; padding:0; }
-    .menu li { cursor:pointer; font-size:18px; }
-    .menu li:hover { color:#00ffff; }
-    #modeToggle { padding:8px 18px; font-size:16px; background:#00ffff; border:none; border-radius:6px; cursor:pointer; color:#111827; font-weight:bold; }
-    .hero { text-align:center; margin-top:50px; }
-    .hero h1 { font-size:48px; color:#00ffff; }
-    .hero p { font-size:22px; color:#cbd5e1; margin:15px 0 30px 0; }
-    .hero button { padding:12px 30px; font-size:18px; background-color:#00ffff; color:#111827; border:none; border-radius:8px; cursor:pointer; }
-    .clock-box { display:inline-block; padding:25px 50px; background-color:#111827; border-radius:20px; box-shadow:0 0 25px #00ffff; margin-top:40px; text-align:center; }
-    #time { font-size:48px; color:#00ffff; font-weight:bold; }
-    #date { font-size:22px; margin-top:10px; color:#cbd5e1; }
-    .light-mode { background:white; color:black; }
-    .light-mode .navbar { background:#e5e7eb; }
-    .light-mode .clock-box { background:#f3f4f6; box-shadow:0 0 15px #999; }
-    @media screen and (max-width: 768px) {
-      .navbar { flex-direction:column; align-items:flex-start; padding:10px 20px; }
-      .menu { flex-direction:column; gap:15px; margin-top:10px; }
-      .hero h1 { font-size:32px; }
-      .hero p { font-size:18px; }
-      .hero button { font-size:16px; padding:10px 25px; }
-      .clock-box { padding:20px 35px; }
-      #time { font-size:36px; }
-      #date { font-size:18px; }
-    }
-  </style>
-</head>
-<body>
-<div class="navbar">
-  <div class="logo">Wali Atiq</div>
-  <ul class="menu">
-    <li>Home</li>
-    <li>About</li>
-    <li>Services</li>
-    <li>Contact</li>
-  </ul>
-  <button id="modeToggle">🌙 Mode</button>
-</div>
-<div class="hero">
-  <h1>Welcome to Wali Atiq’s Website</h1>
-  <p>Learn web development and start freelancing!</p>
-  <button>Get Started</button>
-</div>
-<div class="clock-box">
-  <div id="time"></div>
-  <div id="date"></div>
-</div>
-<script>
-function updateClock() {
-  var now = new Date();
-  var hours = now.getHours();
-  var minutes = now.getMinutes();
-  var seconds = now.getSeconds();
-  var ampm = (hours >= 12) ? "PM" : "AM";
-  hours = hours % 12;
-  if (hours == 0) hours = 12;
-  if (hours < 10) hours = "0" + hours;
-  if (minutes < 10) minutes = "0" + minutes;
-  if (seconds < 10) seconds = "0" + seconds;
-  document.getElementById("time").innerHTML = hours + ":" + minutes + ":" + seconds + " " + ampm;
-  document.getElementById("date").innerHTML = now.toLocaleDateString(undefined, { weekday:'long', year:'numeric', month:'long', day:'numeric' });
-}
-setInterval(updateClock, 1000);
-updateClock();
-document.getElementById("modeToggle").onclick = function () { document.body.classList.toggle("light-mode"); };
-</script>
-</body>
-</html>
-
-
-
-
