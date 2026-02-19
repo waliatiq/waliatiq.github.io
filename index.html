@@ -459,7 +459,73 @@ document.getElementById("modeToggle").onclick = function () {
 <html>
 <head>
   <title>Wali Atiq Website</title>
-  <style>
+  <style>/* HERO ANIMATION */
+.hero {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(135deg, #0f172a, #020617);
+  background-size: 200% 200%;
+  animation: gradientBG 8s ease infinite;
+  padding: 20px;
+  color: white;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.hero-content {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeSlide 1s forwards;
+  animation-delay: 0.5s;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  margin-bottom: 15px;
+  color: #00ffff;
+}
+
+.hero-content p {
+  font-size: 20px;
+  margin-bottom: 25px;
+  color: #cbd5e1;
+}
+
+.hero-btn {
+  padding: 12px 30px;
+  font-size: 18px;
+  background: #00ffff;
+  color: #111827;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  opacity: 0;
+  transform: scale(0.8);
+  animation: buttonPop 0.8s forwards;
+  animation-delay: 1.5s;
+}
+
+@keyframes fadeSlide {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes buttonPop {
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .hero-content h1 { font-size: 32px; }
+}
+
     body {
       margin:0;
       font-family:Arial;
@@ -536,6 +602,7 @@ document.getElementById("modeToggle").onclick = function () { document.body.clas
 </script>
 </body>
 </html>
+
 
 
 
