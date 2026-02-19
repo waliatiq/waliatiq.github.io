@@ -1,10 +1,59 @@
+
 <!DOCTYPE html>
 <html>
 <head>
   <title>Wali Atiq Website</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
+  <style>/* SERVICES */
+.services {
+  padding:60px 20px;
+  text-align:center;
+}
+
+.services h2 {
+  font-size:36px;
+  color:#00ffff;
+  margin-bottom:40px;
+}
+
+.service-boxes {
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  flex-wrap:wrap;
+}
+
+.service-card {
+  background:#111827;
+  padding:30px;
+  width:260px;
+  border-radius:15px;
+  transition:0.3s;
+  box-shadow:0 0 15px rgba(0,255,255,0.2);
+}
+
+.service-card:hover {
+  transform:translateY(-10px);
+  box-shadow:0 0 25px #00ffff;
+}
+
+.service-card h3 {
+  color:#00ffff;
+  margin-bottom:10px;
+}
+
+.service-card p {
+  color:#cbd5e1;
+  font-size:15px;
+}
+
+/* light mode support */
+.light-mode .service-card {
+  background:#f3f4f6;
+  color:black;
+}
+
     body {
       margin:0;
       font-family:Arial;
@@ -100,6 +149,30 @@
       background:#0ea5e9;
       transform:scale(1.08);
     }
+</section>
+<!-- SERVICES -->
+<section class="services">
+  <h2>My Services</h2>
+
+  <div class="service-boxes">
+
+    <div class="service-card">
+      <h3>🌐 Web Design</h3>
+      <p>Modern and responsive website design for your business.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>💻 Frontend Development</h3>
+      <p>Clean and fast websites using HTML, CSS and JavaScript.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>🚀 Website Optimization</h3>
+      <p>Speed optimization and mobile friendly improvements.</p>
+    </div>
+
+  </div>
+</section>
 
     /* CLOCK */
     .clock-box {
